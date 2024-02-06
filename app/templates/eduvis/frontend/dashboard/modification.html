@@ -1,0 +1,95 @@
+{% extends "eduvis/frontend/base.html" %}
+{% block user %} {{ userName }} {% endblock %}
+{% block leftmenu %}{% endblock %}
+{% block content %}
+        <!-- start: content -->
+        <div id="content" style="padding-left: 0px;">
+            <form id="submitForm" class="cmxform" method="post" novalidate="novalidate">
+                <div class="col-md-12" style="padding:5px;">
+                    <div class="col-md-12">
+                        <div class="panel">                            
+                            <div class="col-md-12 bg-white border-none" style="padding:20px; margin-bottom: -70px;">
+                                <hr>
+                                <input class="submit btn btn-primary" type="submit" value="Próxima">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        
+        <script type="text/javascript">
+            document.getElementById("nav-bar").remove()
+            
+            var divContent = document.createElement("div");
+            var divContentatt1 = document.createAttribute("style");
+            divContentatt1.value = "padding:20px; margin-bottom: -70px;";
+            divContent.setAttributeNode(divContentatt1);
+
+            var divPanel = document.createElement("div");
+            var divPanelatt1 = document.createAttribute("class");
+            divPanelatt1.value = "panel box-shadow-none content-header";
+            divPanel.setAttributeNode(divPanelatt1);
+
+            var divPanelBody = document.createElement("div");
+            var divPanelBodyatt1 = document.createAttribute("class");
+            divPanelBodyatt1.value = "panel-body";
+            divPanelBody.setAttributeNode(divPanelBodyatt1);
+
+            var divCol = document.createElement("div");
+            var divColatt1 = document.createAttribute("class");
+            divColatt1.value = "col-md-12";
+            divCol.setAttributeNode(divColatt1);
+
+            var header3 = document.createElement("h3");
+            var header3att1 = document.createAttribute("class");
+            var header3att2 = document.createAttribute("style");
+            header3att1.value = "animated pulse";
+            header3att2.value = "color: #2196F3";
+            header3.setAttributeNode(header3att1);
+            header3.setAttributeNode(header3att2);
+            
+            var title = document.createTextNode("Sobre as visualizações do dashboard customizado que você removeu:");
+
+            header3.appendChild(title);
+            divCol.appendChild(header3);
+            divPanelBody.appendChild(divCol);
+            divPanel.appendChild(divPanelBody);
+            divContent.appendChild(divPanel);
+
+            document.getElementById("mimin").insertBefore(divContent, document.getElementById("container-fluid mimin-wrapper"))
+        </script>
+
+        <script type="text/javascript">
+            var action = '{{ post_action }}';
+
+            var actatt1 = document.createAttribute("action");
+            actatt1.value = action;
+            document.getElementById("submitForm").setAttributeNode(actatt1); //Link to post
+        </script>
+
+        <script type="text/javascript">
+            var titleChart = {{titleCharts | safe}};
+            var topicsIdList = {{charts_topic | safe}};
+            var chartsIdList = {{charts_id | safe}};
+            var stringlist = {{charts_layout | safe}};
+            var graphlist = JSON.parse("[" + stringlist + "]");
+
+            console.log( chartsIdList );
+
+            for (i=graphlist.length-1; i>=0; i--){
+              chartId = "T"+topicsIdList[i]+"@"+chartsIdList[i];
+              chartPlotlyId = "plotly_"+chartId;
+
+              buildingModificationDashboard(titleChart[i],chartPlotlyId,chartId); //Adding elements at DOM
+              Plotly.newPlot(chartPlotlyId,graphlist[i],{});
+            }
+
+          </script>
+        <!-- end: content -->
+
+        <script type="text/javascript">
+            var data = {{data | safe}};
+            highlightFieldEmpty(data);
+        </script>
+{% endblock %}

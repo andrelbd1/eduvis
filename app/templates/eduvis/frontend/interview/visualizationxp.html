@@ -1,0 +1,47 @@
+{% extends "eduvis/frontend/interview.html" %}
+{% block current %}4{% endblock %}
+{% block title %}<b>Sobre visualização de dados</b>{% endblock %}
+
+{% block content %}
+<div class="col-md-12">                                    
+    <form id="submitForm" class="cmxform" method="post" action="/eduvis/interview/visualizationxp/save/" novalidate="novalidate">
+        <div class="col-md-6">
+            <div class="form-group form-animate-text" style="margin-top:27px !important; font-size: 18px;">
+                Em geral, com que frequência você lê e interpreta gráficos?
+                <select class="form-control" name="frequencialeitura" id="frequencialeitura">
+                    <option value=""></option>
+                    <option value="Nunca">Nunca</option>
+                    <option value="Uma vez ou outra">Uma vez ou outra</option>
+                    <option value="Pelo menos uma vez por mês">Pelo menos uma vez por mês</option>
+                    <option value="Pelo menos uma vez por semana">Pelo menos uma vez por semana</option>
+                    <option value="Mais de uma vez por semana">Mais de uma vez por semana</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group form-animate-text" style="margin-top:27px !important; font-size: 18px;">
+                Em geral, com que frequência você cria gráficos?
+                <select class="form-control" name="frequenciacria" id="frequenciacria">
+                    <option value=""></option>
+                    <option value="Nunca">Nunca</option>
+                    <option value="Uma vez ou outra">Uma vez ou outra</option>
+                    <option value="Pelo menos uma vez por mês">Pelo menos uma vez por mês</option>
+                    <option value="Pelo menos uma vez por semana">Pelo menos uma vez por semana</option>
+                    <option value="Mais de uma vez por semana">Mais de uma vez por semana</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <hr>
+        </div>
+        <div class="col-md-12">                                            
+            <input class="submit btn btn-primary" type="submit" value="Próxima">
+        </div>
+    </form>
+</div>
+
+<script type="text/javascript">
+    var data = {{data | safe}};
+    highlightFieldEmpty(data);
+</script>
+{% endblock %}

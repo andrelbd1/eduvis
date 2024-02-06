@@ -1,0 +1,180 @@
+{% extends "eduvis/frontend/base.html" %}
+{% block user %} {{ userName }} {% endblock %}
+{% block evaluation %} "http://127.0.0.1:8558/eduvis/evaluation/" {% endblock %}
+
+{% block leftmenu %}
+  <!-- start: menu -->
+    <div id="left-menu">
+    </div>
+  <!-- end: menu -->
+
+  <script type="text/javascript">
+    var hasLeftMenu = '{{ enableLeftMenu }}';
+    var leftMenuInfo = {{leftMenuInfo | safe}};
+    var amountSelectedVG = {{amountSelectedVG | safe}};
+
+    if (parseInt(hasLeftMenu, 10)){    
+      loadMenu(leftMenuInfo,amountSelectedVG); //Adding left menu at DOM
+    }
+  </script>
+
+{% endblock %}
+
+{% block content %}
+        <!-- start: content -->
+          <div id="content">
+          </div>
+
+          <!-- <div id="content" style="padding-left: 0px;">
+            <div class="col-md-12" style="padding:5px">
+              <div class="col-md-12">
+                <div class="panel">
+                  <div class="panel-heading bg-white border-none" style="padding:50px;">
+                    <div class="col-md-9 col-sm-9 col-sm-12 text-left">
+                      <h4>
+                        <b>Teste 1</b>
+                      </h4>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-sm-12 text-right">
+                      <button class=" btn btn-outline btn-mn btn-lg btn-primary" data-toggle="tooltip" data-placement="bottom" title="Mover para cima" value="primary" onclick=moveUpItemDashboard(this)>
+                        <span class="fa fa-sort-asc"></span>
+                      </button>
+                      <button class=" btn btn-outline btn-mn btn-lg btn-primary" data-toggle="tooltip" data-placement="bottom" title="Mover para baixo" value="primary" onclick=moveDownItemDashboard(this)>
+                        <span class="fa fa-sort-desc"></span>
+                      </button>
+                      <button class=" btn btn-outline btn-mn btn-lg btn-primary" data-toggle="tooltip" data-placement="bottom" title="Configurações" value="primary" onclick=settingsItemDashboard()>
+                        <span class="fa fa-cogs"></span>
+                      </button>
+                      <button class=" btn btn-outline btn-mn btn-lg btn-primary" data-toggle="tooltip" data-placement="bottom" title="Remover" value="primary" onclick="removeItemDashboard(this)">
+                        <span class="fa fa-times"></span>
+                      </button>                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12" style="padding:5px">
+              <div class="col-md-12">
+                <div class="panel">
+                  <div class="panel-heading bg-white border-none" style="padding:50px;">
+                    <div class="col-md-9 col-sm-9 col-sm-12 text-left">
+                      <h4>
+                        <b>Teste 2</b>
+                      </h4>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-sm-12 text-right">
+                      <button class=" btn btn-outline btn-mn btn-lg btn-primary" data-toggle="tooltip" data-placement="bottom" title="Mover para cima" value="primary" onclick=moveUpItemDashboard(this)>
+                        <span class="fa fa-sort-asc"></span>
+                      </button>
+                      <button class=" btn btn-outline btn-mn btn-lg btn-primary" data-toggle="tooltip" data-placement="bottom" title="Mover para baixo" value="primary" onclick=moveDownItemDashboard(this)>
+                        <span class="fa fa-sort-desc"></span>
+                      </button>
+                      <button class=" btn btn-outline btn-mn btn-lg btn-primary" data-toggle="tooltip" data-placement="bottom" title="Configurações" value="primary" onclick=settingsItemDashboard()>
+                        <span class="fa fa-cogs"></span>
+                      </button>
+                      <button class=" btn btn-outline btn-mn btn-lg btn-primary" data-toggle="tooltip" data-placement="bottom" title="Remover" value="primary" onclick="removeItemDashboard(this)">
+                        <span class="fa fa-times"></span>
+                      </button>                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12" style="padding:5px">
+              <div class="col-md-12">
+                <div class="panel">
+                  <div class="panel-heading bg-white border-none" style="padding:50px;">
+                    <div class="col-md-9 col-sm-9 col-sm-12 text-left">
+                      <h4>
+                        <b>Teste 3</b>
+                      </h4>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-sm-12 text-right">
+                      <button class=" btn btn-outline btn-mn btn-lg btn-primary" data-toggle="tooltip" data-placement="bottom" title="Mover para cima" value="primary" onclick=moveUpItemDashboard(this)>
+                        <span class="fa fa-sort-asc"></span>
+                      </button>
+                      <button class=" btn btn-outline btn-mn btn-lg btn-primary" data-toggle="tooltip" data-placement="bottom" title="Mover para baixo" value="primary" onclick=moveDownItemDashboard(this)>
+                        <span class="fa fa-sort-desc"></span>
+                      </button>
+                      <button class=" btn btn-outline btn-mn btn-lg btn-primary" data-toggle="tooltip" data-placement="bottom" title="Configurações" value="primary" onclick=settingsItemDashboard()>
+                        <span class="fa fa-cogs"></span>
+                      </button>
+                      <button class=" btn btn-outline btn-mn btn-lg btn-primary" data-toggle="tooltip" data-placement="bottom" title="Remover" value="primary" onclick="removeItemDashboard(this)">
+                        <span class="fa fa-times"></span>
+                      </button>                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12" style="padding:5px">
+              <div class="col-md-12">
+                <div class="panel">
+                  <div class="panel-heading bg-white border-none" style="padding:50px;">
+                    <div class="col-md-9 col-sm-9 col-sm-12 text-left">
+                      <h4>
+                        <b>Teste 4</b>
+                      </h4>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-sm-12 text-right">
+                      <button class=" btn btn-outline btn-mn btn-lg btn-primary" data-toggle="tooltip" data-placement="bottom" title="Mover para cima" value="primary" onclick=moveUpItemDashboard(this)>
+                        <span class="fa fa-sort-asc"></span>
+                      </button>
+                      <button class=" btn btn-outline btn-mn btn-lg btn-primary" data-toggle="tooltip" data-placement="bottom" title="Mover para baixo" value="primary" onclick=moveDownItemDashboard(this)>
+                        <span class="fa fa-sort-desc"></span>
+                      </button>
+                      <button class=" btn btn-outline btn-mn btn-lg btn-primary" data-toggle="tooltip" data-placement="bottom" title="Configurações" value="primary" onclick=settingsItemDashboard()>
+                        <span class="fa fa-cogs"></span>
+                      </button>
+                      <button class=" btn btn-outline btn-mn btn-lg btn-primary" data-toggle="tooltip" data-placement="bottom" title="Remover" value="primary" onclick="removeItemDashboard(this)">
+                        <span class="fa fa-times"></span>
+                      </button>                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div> -->
+          <script type="text/javascript">
+            var hasLeftMenu = '{{ enableLeftMenu }}';
+            var evalink = '/eduvis/evaluation_customizable_dashboard/';
+
+            if (!parseInt(hasLeftMenu, 10)){
+              var styleatt2 = document.createAttribute("style");
+              styleatt2.value = "padding-left: 0px;";
+              document.getElementById("content").setAttributeNode(styleatt2); //Remove menu gap
+
+              evalink = '/eduvis/evaluation_static_dashboard/';
+            }
+
+            var hrefatt1 = document.createAttribute("href");
+            hrefatt1.value = evalink;
+            document.getElementById("evalink").setAttributeNode(hrefatt1); //link to evaluation
+          </script>
+
+
+          <script type="text/javascript">
+            var hasLeftMenu = '{{ enableLeftMenu }}';
+            var titleChart = {{titleCharts | safe}};
+            var topicsIdList = {{charts_topic | safe}};
+            var chartsIdList = {{charts_id | safe}};
+            var stringlist = {{charts_layout | safe}};
+            var graphlist = JSON.parse("[" + stringlist + "]");
+
+            console.log( chartsIdList );
+
+            for (i=0; i<graphlist.length; i++){
+              chartId = "T"+topicsIdList[i]+"@"+chartsIdList[i];
+              chartPlotlyId = "plotly_"+chartId;
+
+              buildingDashboard(titleChart[i],chartPlotlyId,chartId,parseInt(hasLeftMenu, 10)); //Adding elements at DOM
+              Plotly.newPlot(chartPlotlyId,graphlist[i],{});
+            }
+
+          </script>
+        <!-- end: content -->
+{% endblock %}

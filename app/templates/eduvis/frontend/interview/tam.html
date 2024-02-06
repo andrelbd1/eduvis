@@ -1,0 +1,31 @@
+{% extends "eduvis/frontend/interview.html" %}
+{% block current %}5{% endblock %}
+{% block title %}<b>Sobre as visualizações do dashboard EDUVIS customizável</b>{% endblock %}
+
+{% block content %}
+
+<div class="col-md-12">
+    <form id="submitForm" class="cmxform" method="post" action="/eduvis/interview/evaluation/save/" novalidate="novalidate">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <hr>
+        </div>        
+        <div class="col-md-12">
+            <input class="submit btn btn-primary" type="submit" value="Próxima">
+        </div>
+    </form>
+</div>
+
+<script type="text/javascript">
+    var questionList = {{questions | safe}};
+    
+    console.log( questionList );
+    
+    buildingTamEvaluation(questionList)
+</script>
+<!-- end: content -->
+
+<script type="text/javascript">
+    var data = {{data | safe}};
+    highlightFieldEmpty(data);
+</script>
+{% endblock %}
