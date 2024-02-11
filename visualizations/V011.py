@@ -5,11 +5,6 @@ from dash.dependencies import Input, Output, State
 
 import random
 
-import plotly
-import plotly.plotly as py
-import plotly.tools as tls
-import plotly.graph_objs as go
-
 import os
 import pandas as pd
 import numpy as np
@@ -17,6 +12,7 @@ import numpy as np
 import pickle
 import json
 
+import plotly
 from plotly.utils import PlotlyJSONEncoder
 from plotly.graph_objs import Figure, Layout, Bar, Table, Heatmap, Scatter, Box, Violin
 from plotly.offline import init_notebook_mode, iplot
