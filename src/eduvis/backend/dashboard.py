@@ -2,10 +2,10 @@ import numpy as np
 import pandas as pd
 import json
 
-from app.eduvis.constants import LANGUAGE
-from app.eduvis.constants import RANDOM_NUMBER_STUDENTS
-from app.eduvis.constants import LST_DEFAULT_TOPIC_CHART_ID
-from app.eduvis.backend.connection_db import Connection_DB
+from src.eduvis.constants import LANGUAGE
+from src.eduvis.constants import RANDOM_NUMBER_STUDENTS
+from src.eduvis.constants import LST_DEFAULT_TOPIC_CHART_ID
+from src.eduvis.backend.connection_db import Connection_DB
 from visualizations import V001, V002, V003, V004, V005, V006, V007, V008, V009, V010, V011
 
 class Dashboard:

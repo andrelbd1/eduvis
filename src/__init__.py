@@ -1,5 +1,5 @@
 from flask import Flask, render_template, redirect, url_for
-from flask_sqlalchemy import SQLAlchemy
+# from flask_sqlalchemy import SQLAlchemy
 from flask_bootstrap import Bootstrap
 
 app = Flask(__name__)
@@ -18,5 +18,5 @@ Bootstrap(app)
 # 	return render_template('404.html'), 404
 
 # Eduvis Module
-from app.eduvis.views import mod as eduvisModule
-app.register_blueprint(eduvisModule)
+from src.eduvis.views import mod as eduvis
+src.register_blueprint(eduvis)
