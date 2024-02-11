@@ -42,7 +42,7 @@ We also noted a lack of work showing models to support the development of learni
 
 ![MODEL](https://andrelbd1.github.io/assets/img/projects/eduvis/model.png)
 
-We developed EDUVIS as an open source online tool to assemble dashboards based on our proposed model. This tool was built using Python and Javascript. In particular, all the visualizations (total of 141) were designed using Plotly, which provides interactivity, such as zoom in, zoom out, pan, select, toggle spike lines, and mouse hover.
+We developed EDUVIS as an open source online tool to assemble dashboards based on our proposed model. This tool was built using Python and Javascript. In particular, all the visualizations (total of 141) were designed using [Plotly](https://github.com/plotly), which provides interactivity, such as zoom in, zoom out, pan, select, toggle spike lines, and mouse hover.
 
 We captured evidence of their acceptance of our proposal and obtained instructors’ feedback about the tool such as their both analysis and visualization preferences. The combination of the answers to the research questions yields a framework to enable Virtual Learning Environments to assist instructors in gaining insights about both students’ behavior and performance. We hope that our proposed model might be a guide to the development of new dashboards and ground future research.
 
