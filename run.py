@@ -1,13 +1,11 @@
-# import os
-# import sys
-
+import os
+import sys
 # visualizations_dir = os.path.dirname(os.path.dirname(os.path.abspath("visualizations")))
-# sys.path.append(visualizations_dir) # In case of error, put manually the path visualizations 
+visualizations_dir = os.path.abspath("visualizations")
+sys.path.append(visualizations_dir) # In case of error, put manually the path for visualizations 
 
 from src import app
 from src.config import settings
-# application.run(debug=True,port=8558,host='0.0.0.0')
-application.run(debug=True,port=8558)
 
 if __name__ == "__main__":
     debug=False
