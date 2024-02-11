@@ -14,31 +14,31 @@ from datetime import datetime
 from dateutil.relativedelta import relativedelta
 
 # local application imports
-from app.eduvis.constants import DEFAULT_USER_ID
-from app.eduvis.constants import DEFAULT_STATIC_DASHBOARD_ID
-from app.eduvis.constants import DEFAULT_CUSTOMIZABLE_DASHBOARD_ID
-from app.eduvis.constants import STATIC_DASHBOARD_TYPE
-from app.eduvis.constants import CUSTOMIZABLE_DASHBOARD_TYPE
-from app.eduvis.constants import LST_VIEW_INFORMATION
-from app.eduvis.constants import LST_EVALUATION_TAM
+from src.eduvis.constants import DEFAULT_USER_ID
+from src.eduvis.constants import DEFAULT_STATIC_DASHBOARD_ID
+from src.eduvis.constants import DEFAULT_CUSTOMIZABLE_DASHBOARD_ID
+from src.eduvis.constants import STATIC_DASHBOARD_TYPE
+from src.eduvis.constants import CUSTOMIZABLE_DASHBOARD_TYPE
+from src.eduvis.constants import LST_VIEW_INFORMATION
+from src.eduvis.constants import LST_EVALUATION_TAM
 
-# from app import db
-from app.eduvis.backend.dashboard import Dashboard
-from app.eduvis.backend.connection_db import Connection_DB
+# from src import db
+from src.eduvis.backend.dashboard import Dashboard
+from src.eduvis.backend.connection_db import Connection_DB
 
-from app.eduvis.backend.user import User
+from src.eduvis.backend.user import User
 
-from app.eduvis.backend.access import Access
-from app.eduvis.backend.assignment import Assignment
-from app.eduvis.backend.cluster import Cluster
-from app.eduvis.backend.prediction import Prediction
-from app.eduvis.backend.material import Material
-from app.eduvis.backend.forum import Forum
-from app.eduvis.backend.video_access import Video_Access
-from app.eduvis.backend.age import Age
-from app.eduvis.backend.video_interaction import Video_Interaction
-from app.eduvis.backend.video_understood import Video_Understood
-from app.eduvis.backend.navigation import Navigation
+from src.eduvis.backend.access import Access
+from src.eduvis.backend.assignment import Assignment
+from src.eduvis.backend.cluster import Cluster
+from src.eduvis.backend.prediction import Prediction
+from src.eduvis.backend.material import Material
+from src.eduvis.backend.forum import Forum
+from src.eduvis.backend.video_access import Video_Access
+from src.eduvis.backend.age import Age
+from src.eduvis.backend.video_interaction import Video_Interaction
+from src.eduvis.backend.video_understood import Video_Understood
+from src.eduvis.backend.navigation import Navigation
 
 mod = Blueprint("eduvis", __name__, url_prefix='/eduvis')
 

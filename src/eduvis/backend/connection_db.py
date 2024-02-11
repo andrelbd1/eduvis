@@ -1,10 +1,7 @@
 import sqlite3
 
-from app.eduvis.model.model_db import qry_insert
-from app.eduvis.model.model_db import qry_select
-from app.eduvis.model.model_db import qry_update
-# from app.eduvis.model.model_db import qry_delete
-from app.eduvis.model.initialize_db import boot_data
+from src.eduvis.model.model_db import qry_insert, qry_select, qry_update#, qry_delete
+from src.eduvis.model.initialize_db import boot_data
 
 class Connection_DB:
     _db = 'eduvis.db'

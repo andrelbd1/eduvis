@@ -5,13 +5,11 @@
 *.shp
 *.shx
 temp/
-data
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
-*$py.class
+*$py.class'
 data/
-data
 # C extensions
 *.so
 
