@@ -2,7 +2,7 @@ About
 -----------
 Mapping Results (MR) and Requirements (RQ) uncovered in 11 visualization groups (V) with common data logs, topics, and questions about student interaction logs on Virtual Learning Environments.
 
-These mapping results and requirements are results found on research in Educational Data Mining and Learning Analytics:
+Both mapping results and requirements are results found on research in Educational Data Mining and Learning Analytics:
  - [A. L. B. Damasceno, D. S. Ribeiro and S. D. J. Barbosa, "What the Literature and Instructors Say about the Analysis of Student Interaction Logs on Virtual Learning Environments," *2019 IEEE Frontiers in Education Conference (FIE)*, Covington, KY, USA, 2019, pp. 1-9, doi: 10.1109/FIE43999.2019.9028398](https://ieeexplore.ieee.org/document/9028398)
 
 ````bash
