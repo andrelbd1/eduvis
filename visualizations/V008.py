@@ -31,7 +31,7 @@ class V008:
     _df_sum_day = pd.DataFrame()
     _df_sum_week = pd.DataFrame()
     _df_all_day = pd.DataFrame()
-    _preprocessed_folder = os.path.join('Preprocessed')
+    _preprocessed_folder = os.path.abspath("preprocessed")
 
     def __init__(self, language="pt", type_result = "jupyter-notebook"):
         self._language = language

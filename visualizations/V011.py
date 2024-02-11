@@ -23,7 +23,6 @@ from sklearn.cluster import KMeans
 
 
 init_notebook_mode(connected=True) # initiate notebook for offline plot
-plotly.__version__
 
 class V011:
     NUMBER_ACTIONS = 50
@@ -32,7 +31,7 @@ class V011:
 
     _language = "pt"
     _type_result="jupyter-notebook"
-    _preprocessed_folder = os.path.join('Preprocessed')
+    _preprocessed_folder = os.path.abspath("preprocessed")
 
     def __init__(self, language="pt", type_result = "jupyter-notebook"):
         self._language = language

@@ -26,7 +26,7 @@ class V001:
     _students = pd.DataFrame()
     _assigns = pd.DataFrame()
     _map = pd.DataFrame()
-    _preprocessed_folder = os.path.join('Preprocessed')
+    _preprocessed_folder = os.path.abspath("preprocessed")
 
     def __init__(self, language="pt", type_result = "jupyter-notebook"):
         self._language = language
