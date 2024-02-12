@@ -4,8 +4,8 @@ from src.models.model_db import qry_insert, qry_select, qry_update#, qry_delete
 from src.models.initialize_db import boot_data
 
 class Connection_DB:
-    _db = 'eduvis.db'
-    _model_db = 'models/db_sqlite.sql'
+    _db = 'src/models/eduvis.db'
+    _model_db = 'src/models/db_sqlite.sql'
     _conn = None
     _cursor = None
 
