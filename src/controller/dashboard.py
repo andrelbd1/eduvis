@@ -2,9 +2,7 @@ import numpy as np
 import pandas as pd
 import json
 
-from src.config.constants import LANGUAGE
-from src.config.constants import RANDOM_NUMBER_STUDENTS
-from src.config.constants import LST_DEFAULT_TOPIC_CHART_ID
+from src.config.constants import LANGUAGE, RANDOM_NUMBER_STUDENTS, LST_DEFAULT_TOPIC_CHART_ID
 from src.controller.connection_db import Connection_DB
 from visualizations import V001, V002, V003, V004, V005, V006, V007, V008, V009, V010, V011
 

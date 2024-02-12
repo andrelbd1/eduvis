@@ -96,6 +96,10 @@ def index():
     # return redirect('/eduvis/interview/avaxp/')
     # return redirect('/eduvis/interview/data/')
     # return redirect('/eduvis/dashboard/')
+    # return redirect('/eduvis/interview/visualizationxp/')
+    # return redirect('/eduvis/interview/evaluation/')
+    # return redirect('/eduvis/thankyou/')
+
 
 @mod.route('/invite/')
 def invite():    

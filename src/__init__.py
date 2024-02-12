@@ -1,5 +1,4 @@
 from flask import Flask, render_template, redirect, url_for
-# from flask_sqlalchemy import SQLAlchemy
 from flask_bootstrap import Bootstrap
 
 app = Flask(__name__, template_folder='view')
