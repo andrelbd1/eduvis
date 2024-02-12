@@ -25,7 +25,7 @@ class V006:
 
     _language = "pt"
     _type_result="jupyter-notebook"
-    _preprocessed_folder = os.path.abspath("preprocessed")
+    _preprocessed_folder = os.path.abspath("visualizations/preprocessed")
 
     def __init__(self, language="pt", type_result = "jupyter-notebook"):
         self._language = language

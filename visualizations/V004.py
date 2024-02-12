@@ -23,7 +23,7 @@ class V004:
     _type_result="jupyter-notebook"
     _material_name = []
     _df_sum = []
-    _preprocessed_folder = os.path.abspath("preprocessed")
+    _preprocessed_folder = os.path.abspath("visualizations/preprocessed")
 
     def __init__(self, language="pt", type_result = "jupyter-notebook"):
         self._language = language

@@ -27,7 +27,7 @@ class V009:
     _type_result="jupyter-notebook"
 
     _df_chronology = pd.DataFrame()
-    _preprocessed_folder = os.path.abspath("preprocessed")
+    _preprocessed_folder = os.path.abspath("visualizations/preprocessed")
     textAction = []
 
     def __init__(self, language="pt", type_result = "jupyter-notebook"):

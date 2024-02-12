@@ -31,7 +31,7 @@ class V010:
     _video_name = []
     _video_dur = []
     _df_sum_feedback = pd.DataFrame()
-    _preprocessed_folder = os.path.abspath("preprocessed")
+    _preprocessed_folder = os.path.abspath("visualizations/preprocessed")
     
     def __init__(self, language="pt", type_result = "jupyter-notebook"):
         self._language = language

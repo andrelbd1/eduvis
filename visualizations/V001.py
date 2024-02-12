@@ -26,7 +26,7 @@ class V001:
     _students = pd.DataFrame()
     _assigns = pd.DataFrame()
     _map = pd.DataFrame()
-    _preprocessed_folder = os.path.abspath("preprocessed")
+    _preprocessed_folder = os.path.abspath("visualizations/preprocessed")
 
     def __init__(self, language="pt", type_result = "jupyter-notebook"):
         self._language = language
@@ -5077,6 +5077,7 @@ class V001:
             print("V001@"+str(id)+" not found")
 
     def get_preprocessed_chart(self,id):
+        print(self._preprocessed_folder)
         if not os.path.exists(self._preprocessed_folder):
             print('There is no preprocessed folder')
             return
