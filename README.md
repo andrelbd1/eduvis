@@ -50,4 +50,6 @@ We captured evidence of their acceptance of our proposal and obtained instructor
 
 Preview
 -----------
+- [Dashboard](http://eduvis.pythonanywhere.com/eduvis/dashboard/)
+
 ![EDUVIS](https://andrelbd1.github.io/assets/img/projects/eduvis/interface.png)
