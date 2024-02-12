@@ -1,0 +1,92 @@
+{% extends "interview.html" %}
+{% block current %}1{% endblock %}
+{% block title %}<b>Sobre você</b>{% endblock %}
+
+{% block content %}
+<div class="col-md-12">
+    <form id="submitForm" class="cmxform" method="post" action="/eduvis/interview/aboutyou/save/" novalidate="novalidate">
+        <div class="col-md-6">
+            <div class="form-group form-animate-text" style="margin-top:40px !important;">
+                <input type="text" class="form-text" id="nomecompleto" name="nomecompleto" required aria-required="true">
+                <span class="bar"></span>
+                <label>Nome completo</label>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group form-animate-text" style="margin-top:27px !important; font-size: 18px;">
+                Idade
+                <select class="form-control" name="idade" id="idade">
+                    <option value=""></option>
+                    <option value="< 20">< 20</option>
+                    <option value="21-30">21-30</option>
+                    <option value="31-40">31-40</option>
+                    <option value="41-60">41-60</option>
+                    <option value="> 60">> 60</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group form-animate-text" style="margin-top:40px !important;">
+                <input type="text" class="form-text" id="localorigem" name="localorigem" required aria-required="true">
+                <span class="bar"></span>
+                <label>Estado e cidade onde nasceu (caso seja estrangeiro, informe o país)</label>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group form-animate-text" style="margin-top:40px !important;">
+                <input type="text" class="form-text" id="localtrabalho" name="localtrabalho" required aria-required="true">
+                <span class="bar"></span>
+                <label>Estado e cidade onde trabalha</label>
+            </div>
+        </div>        
+        <div class="col-md-6">
+            <div class="form-group form-animate-text" style="margin-top:40px !important;">
+                <input type="text" class="form-text" id="areaformacao" name="areaformacao" required aria-required="true">
+                <span class="bar"></span>
+                <label>Área de formação</label>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group form-animate-text" style="margin-top:27px !important; font-size: 18px;">
+                Grau de escolaridade
+                <select class="form-control" name="escolaridade" id="escolaridade">
+                    <option value=""></option>
+                    <option value="Ensino Médio">Ensino Médio</option>
+                    <option value="Graduação">Graduação</option>
+                    <option value="Especialização">Especialização</option>
+                    <option value="Mestrado">Mestrado</option>
+                    <option value="Doutorado">Doutorado</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group form-animate-text" style="margin-top:40px !important;">
+                <input type="text" class="form-text" id="profissao" name="profissao" required aria-required="true">
+                <span class="bar"></span>
+                <label>Profissão</label>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group form-animate-text" style="margin-top:27px !important; font-size: 18px;">
+                Você tem experiência como instrutor, tutor, monitor ou professor utilizando Ambientes Virtuais de Aprendizagem (AVAs) como Moodle, Blackboard, etc.?
+                <select class="form-control" name="avaxp" id="avaxp">
+                    <option value=""></option>
+                    <option value="1">Sim</option>
+                    <option value="0">Não</option>                
+                </select>
+            </div>
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <hr>
+        </div>
+        <div class="col-md-12">
+            <input class="submit btn btn-primary" type="submit" value="Próxima">
+        </div>
+    </form>
+</div>
+
+<script type="text/javascript">
+    var data = {{data | safe}};
+    highlightFieldEmpty(data);
+</script>
+{% endblock %}

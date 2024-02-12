@@ -1,0 +1,160 @@
+{% extends "interview.html" %}
+{% block current %}3{% endblock %}
+{% block title %}<b>Sobre dados de interação e acesso dos estudantes</b>{% endblock %}
+
+{% block content %}
+
+<div class="col-md-12">    
+    <div class="col-md-12">
+        <div class="form-group form-animate-text" style="margin-bottom:15px; margin-top:27px !important; font-size: 18px;">
+            O quão importante para você é cada um dos seguintes tópicos?
+            <!-- Em relação aos dados de interação e acesso dos estudantes, selecione o grau de importância dos seguintes tópicos -->
+            <!-- Em relação aos dados que você analisa ou que gostaria de analisar, selecione o grau de importância dos seguintes tópicos -->
+        </div>
+    </div>    
+    <form id="submitForm" class="cmxform" method="post" action="/eduvis/interview/data/save/" novalidate="novalidate">
+        <div class="col-md-12">
+            <div class="form-group form-animate-text" style="margin-top:40px !important;">
+                <input type="text" class="form-text" id="gostariadado" name="gostariadado" required aria-required="true">
+                <span class="bar"></span>
+                <label>Que outros dados você considera importantes que não foram apresentados?</label>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group form-animate-text" style="margin-top:40px !important;">
+                <input type="text" class="form-text" id="comoapresentar" name="comoapresentar" required aria-required="true">
+                <span class="bar"></span>
+                <label>Como você gostaria que esses dados fossem apresentados? (Em uma tabela, em gráfico de barra, etc.)</label>
+            </div>
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <hr>
+        </div>        
+        <div class="col-md-12">
+            <input class="submit btn btn-primary" type="submit" value="Próxima">
+        </div>
+    </form>
+</div>
+
+<script type="text/javascript">
+    var select_options_raw = {{selecting | safe}};
+    var submit_btn = document.getElementById("submitForm").firstElementChild;
+    console.log(select_options_raw);
+
+    lst_radio_opt = ["Irrelevante","","","Neutro","","","Essencial"];
+
+    for(i=0; i<select_options_raw.length; i++){
+        var divRoot = document.createElement("div");
+        var divRootatt1 = document.createAttribute("class");
+        divRootatt1.value = "col-md-12";
+        divRoot.setAttributeNode(divRootatt1);
+
+        var divTopic = document.createElement("div");
+        var divTopicatt1 = document.createAttribute("class");
+        var divTopicatt2 = document.createAttribute("style");
+        divTopicatt1.value = "form-group form-animate-text";
+        divTopicatt2.value = "margin-top:20px !important;font-size: 16px;margin-bottom: 15px;";
+        divTopic.setAttributeNode(divTopicatt1);
+        divTopic.setAttributeNode(divTopicatt2);
+
+        var bTopic = document.createElement("b");
+        var titleTopic = document.createTextNode(select_options_raw[i]["label_pt"]); // <-- Topic Title
+        bTopic.appendChild(titleTopic);
+        divTopic.appendChild(bTopic);
+        divRoot.appendChild(divTopic);
+
+        lst_sub_topic = select_options_raw[i]["sub_topic"];
+        console.log(lst_sub_topic);
+        for(j=0; j<lst_sub_topic.length; j++){
+            var div = document.createElement("div");
+            var divatt1 = document.createAttribute("class");
+            var divatt2 = document.createAttribute("id");
+            divatt1.value = "col-md-12";
+            if(j%2==0){
+                divatt1.value = "col-md-12 bg-light2-grey";
+            }
+            divatt2.value = lst_sub_topic[j]["id"];
+            div.setAttributeNode(divatt1);
+            div.setAttributeNode(divatt2);
+
+            var divSubTopic = document.createElement("div");
+            var divSubTopicatt1 = document.createAttribute("class");
+            var divSubTopicatt2 = document.createAttribute("style");
+            divSubTopicatt1.value = "col-md-5 form-group form-animate-text";
+            divSubTopicatt2.value = "margin-top:20px !important; font-size: 18px;margin-bottom: 15px;";
+            divSubTopic.setAttributeNode(divSubTopicatt1);
+            divSubTopic.setAttributeNode(divSubTopicatt2);
+
+            var titleSubTopic = document.createTextNode(lst_sub_topic[j]["label_pt"]); // <-- SubTopic Title
+            divSubTopic.appendChild(titleSubTopic);
+
+            div.appendChild(divSubTopic);
+            for(z=0; z<lst_radio_opt.length; z++){
+                var divOption = document.createElement("div");
+                var divOptionatt1 = document.createAttribute("class");
+                var divOptionatt2 = document.createAttribute("style");
+                divOptionatt1.value = "col-md-1 form-animate-radio";
+                divOptionatt2.value = "margin-top: 20px; display:inline-block; text-align:center;";
+                divOption.setAttributeNode(divOptionatt1);
+                divOption.setAttributeNode(divOptionatt2);
+    
+                var labelRadio = document.createElement("label");
+                var labelRadioatt1 = document.createAttribute("class");
+                var labelRadioatt2 = document.createAttribute("style");
+                labelRadioatt1.value = "radio";
+                labelRadioatt2.value = "font-size: 16px; padding: 0px; margin-bottom: 0px;";
+                labelRadio.setAttributeNode(labelRadioatt1);
+                labelRadio.setAttributeNode(labelRadioatt2);
+    
+                var inputRadio = document.createElement("input");
+                var inputRadioatt1 = document.createAttribute("type");
+                var inputRadioatt2 = document.createAttribute("name");
+                var inputRadioatt3 = document.createAttribute("value");
+                var inputRadioatt4 = document.createAttribute("id");
+                inputRadioatt1.value = "radio";
+                inputRadioatt2.value = lst_sub_topic[j]["id"];
+                inputRadioatt3.value = (z+1).toString();
+                inputRadioatt4.value = lst_sub_topic[j]["id"].toString()+"#"+(z+1).toString();
+                inputRadio.setAttributeNode(inputRadioatt1);
+                inputRadio.setAttributeNode(inputRadioatt2);
+                inputRadio.setAttributeNode(inputRadioatt3);
+                inputRadio.setAttributeNode(inputRadioatt4);
+    
+                var spanRadioOuter = document.createElement("span");
+                var spanRadioOuteratt1 = document.createAttribute("class");
+                spanRadioOuteratt1.value = "outer";
+                spanRadioOuter.setAttributeNode(spanRadioOuteratt1);
+    
+                var spanRadioInner = document.createElement("span");
+                var spanRadioInneratt1 = document.createAttribute("class");
+                spanRadioInneratt1.value = "inner";
+                spanRadioInner.setAttributeNode(spanRadioInneratt1);
+    
+                var labelRadioText = document.createElement("label");
+                var labelRadioTextatt1 = document.createAttribute("style");
+                labelRadioTextatt1.value = "font-size: 16px;display:block;";
+                labelRadioText.setAttributeNode(labelRadioTextatt1);
+                
+                var titleRadio = document.createTextNode(lst_radio_opt[z]);
+                
+                spanRadioOuter.appendChild(spanRadioInner);
+                labelRadio.appendChild(inputRadio);
+                labelRadio.appendChild(spanRadioOuter);
+                labelRadioText.appendChild(titleRadio);
+                divOption.appendChild(labelRadio);
+                divOption.appendChild(labelRadioText);
+                div.appendChild(divOption);
+            }
+
+            divRoot.appendChild(div);
+        }
+
+        document.getElementById("submitForm").insertBefore(divRoot,submit_btn);
+    }
+</script>
+
+<script type="text/javascript">
+    var data = {{data | safe}};
+    highlightFieldEmpty(data);
+</script>
+{% endblock %}

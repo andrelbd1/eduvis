@@ -1,0 +1,89 @@
+{% extends "interview.html" %}
+{% block current %}2{% endblock %}
+{% block title %}<b>Sobre sua experiência com AVAs</b>{% endblock %}
+
+{% block content %}
+<div class="col-md-12">                                    
+    <form id="submitForm" class="cmxform" method="post" action="/eduvis/interview/avaxp/save/" novalidate="novalidate">
+        <div class="col-md-6">
+            <div class="form-group form-animate-text" style="margin-top:40px !important;">
+                <input type="text" class="form-text" id="papeisavas" name="papeisavas" required aria-required="true">
+                <span class="bar"></span>
+                <label>Papeis desempenhados na utilização do AVAs</label>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group form-animate-text" style="margin-top:40px !important;">
+                <input type="text" class="form-text" id="tempoexpavas" name="tempoexpavas" required aria-required="true">
+                <span class="bar"></span>
+                <label>Tempo de experiência na utilização de AVAs</label>
+            </div>
+        </div>
+        
+        <div class="col-md-12">
+            <div class="form-group form-animate-text" style="margin-top:40px !important;">
+                <input type="text" class="form-text" id="instituicao" name="instituicao" required aria-required="true">
+                <span class="bar"></span>
+                <label>Instituições de ensino que trabalha (e que trabalhou) utilizando AVAs</label>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group form-animate-text" style="margin-top:40px !important;">
+                <input type="text" class="form-text" id="disciplinas" name="disciplinas" required aria-required="true">
+                <span class="bar"></span>
+                <label>Disciplinas ensinadas utilizando AVAs</label>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group form-animate-text" style="margin-top:27px !important; font-size: 18px;">
+                Experiência com qual modalidade de ensino utilizando AVAs
+                <select class="form-control" name="avaxp" id="avaxp">
+                    <option value=""></option>
+                    <option value="a distancia">A distância</option>
+                    <option value="presencial">Presencial</option>
+                    <option value="ambas">Ambas</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group form-animate-text" style="margin-top:40px !important;">
+                <input type="text" class="form-text" id="avasusados" name="avasusados" required aria-required="true">
+                <span class="bar"></span>
+                <label>AVAs que utiliza (e que já utilizou)</label>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group form-animate-text" style="margin-top:40px !important;">
+                <input type="text" class="form-text" id="recursosusados" name="recursosusados" required aria-required="true">
+                <span class="bar"></span>
+                <label>Recursos que utiliza e já utilizou nos AVAs (vídeos, ebooks, fórum, chat, badges, etc.)?</label>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group form-animate-text" style="margin-top:40px !important;">
+                <input type="text" class="form-text" id="idadealunos" name="idadealunos" required aria-required="true">
+                <span class="bar"></span>
+                <label>Faixa etária dos alunos que ensina (e que já ensinou) utilizando AVAs</label>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group form-animate-text" style="margin-top:40px !important;">
+                <input type="text" class="form-text" id="inforelevante" name="inforelevante" required aria-required="true">
+                <span class="bar"></span>
+                <label>Quais informações dos alunos você considera relevante?</label>
+            </div>
+        </div>                                            
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <hr>
+        </div>
+        <div class="col-md-12">                                            
+            <input class="submit btn btn-primary" type="submit" value="Próxima">
+        </div>
+    </form>
+</div>
+
+<script type="text/javascript">
+    var data = {{data | safe}};
+    highlightFieldEmpty(data);
+</script>
+{% endblock %}

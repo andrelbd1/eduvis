@@ -2,7 +2,7 @@ from flask import Flask, render_template, redirect, url_for
 # from flask_sqlalchemy import SQLAlchemy
 from flask_bootstrap import Bootstrap
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='view')
 
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/eduvisPHD45'
 Bootstrap(app)
