@@ -2,8 +2,8 @@ import pandas as pd
 import random
 
 from datetime import datetime
-from src.config.constants import LST_VIEW_INFORMATION, SUB_TOPIC, LST_EVALUATION_TAM, LST_DEFAULT_TOPIC_CHART_ID
-from src.controller.connection_db import Connection_DB
+from src.config import settings
+from src.models import Connection_DB
 
 class User:    
     _conn = Connection_DB()
@@ -43,13 +43,13 @@ class User:
 
         dash_id = self._conn.insert("tb_dashboard",(user_id, name, type_dash, language, current_time), True)
 
-        order_list = [i for i in range(1, len(LST_DEFAULT_TOPIC_CHART_ID)+1)]
+        order_list = [i for i in range(1, len(settings.LST_DEFAULT_TOPIC_CHART_ID)+1)]
         random.shuffle(order_list)
 
         lst_dashboard_topic_chart = []
         
-        for i in range(0,len(LST_DEFAULT_TOPIC_CHART_ID)):
-            lst_dashboard_topic_chart.append((dash_id, LST_DEFAULT_TOPIC_CHART_ID[i], order_list[i], "", "", 1))
+        for i in range(0,len(settings.LST_DEFAULT_TOPIC_CHART_ID)):
+            lst_dashboard_topic_chart.append((dash_id, settings.LST_DEFAULT_TOPIC_CHART_ID[i], order_list[i], "", "", 1))
 
         self._conn.insert_many("tb_dashboard_topic_chart",lst_dashboard_topic_chart)
         
@@ -65,7 +65,7 @@ class User:
             self.initalize_dashboard(user_id, 1, 1) #Adding Customizable Dashboard
             
             lst_evaluate_topic = []
-            for i in range(1,len(SUB_TOPIC)+1):
+            for i in range(1,len(settings.SUB_TOPIC)+1):
                 lst_evaluate_topic.append((user_id,i,""))
             
             self._conn.insert_many("tb_evaluate",lst_evaluate_topic)
@@ -81,7 +81,7 @@ class User:
 
     def record_data(self,data,id):
         lst_evaluate_topic = []
-        for i in range(1,len(SUB_TOPIC)+1): #Get all evaluations for each subtopics
+        for i in range(1,len(settings.SUB_TOPIC)+1): #Get all evaluations for each subtopics
             lst_evaluate_topic.append((data[str(i)],id,i))
         
         self._conn.update("user_background_data", (data['gostariadado'], data['comoapresentar'],id))        
@@ -116,7 +116,7 @@ class User:
         ids = list(data.keys())
         
         for i in ids:
-            question = LST_EVALUATION_TAM[int(i)]
+            question = settings.LST_EVALUATION_TAM[int(i)]
             feedback = data[i]
             lst_question_dashboard.append((dash_id,question,feedback))
 

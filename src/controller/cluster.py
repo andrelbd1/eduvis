@@ -1,8 +1,8 @@
 import numpy as np
 import pandas as pd
 
-from src.config.constants import LANGUAGE, RANDOM_NUMBER_STUDENTS
-from src.controller.connection_db import Connection_DB
+from src.config import settings
+from src.models import Connection_DB
 from visualizations import V005
 
 class Cluster:
@@ -12,7 +12,7 @@ class Cluster:
     _conn = Connection_DB()
     _students = pd.DataFrame()
     _preprocessed_chart = True
-    _view5 = V005.V005(type_result = "flask",language = LANGUAGE)
+    _view5 = V005.V005(type_result = "flask",language = settings.LANGUAGE)
 
     def __init__(self,conn,user_id,dashboard_id,dashboard_type,preprocessed_chart=True):
         self._conn = conn
@@ -22,7 +22,7 @@ class Cluster:
         self._preprocessed_chart = preprocessed_chart
         
         if not self._preprocessed_chart:
-            self.number_students = RANDOM_NUMBER_STUDENTS
+            self.number_students = settings.RANDOM_NUMBER_STUDENTS
             names = pd.read_csv("app/eduvis/names.csv")        
             self._students = [names.group_name[np.random.randint(0,len(names.group_name)+1)] for n in range(0,self.number_students)]
             self._students.sort()
