@@ -12,7 +12,7 @@ class Video_Access:
     _conn = Connection_DB()
     _students = pd.DataFrame()
     _preprocessed_chart = True
-    _view4 = V004.V004(type_result = "flask",settings.LANGUAGE = settings.LANGUAGE)
+    _view4 = V004.V004(type_result = "flask",language = settings.LANGUAGE)
 
     def __init__(self,conn,user_id,dashboard_id,dashboard_type,preprocessed_chart=True):
         self._conn = conn
