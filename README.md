@@ -1,3 +1,10 @@
+Eduvis
+=======================
+
+[![GitHub last commit](https://img.shields.io/github/last-commit/andrelbd1/eduvis.svg)](https://github.com/andrelbd1/eduvis) 
+[![GitHub repo size in bytes](https://img.shields.io/github/repo-size/andrelbd1/eduvis.svg)](https://github.com/andrelbd1/eduvis) 
+
+
 Quick Setup
 -----------
 
