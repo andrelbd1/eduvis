@@ -14,11 +14,17 @@ Quick Setup
 ````bash
     pip install -r requirements.txt
 ````
-5. Start the Flask application on your original terminal window:
+5. Set environment variables to:
+    - environment (local | prod):
+        - `ENV`
+    - generate preprocessed views (True | False):
+        - `GENERATE_VIEWS`
+
+6. Start the Flask application on your original terminal window:
 ````bash
     venv/bin/python run.py
 ````
-6. Go to `http://localhost:8558/eduvis/` and enjoy this application!
+7. Go to `http://localhost:8558/eduvis/` and enjoy this application!
 
 About
 -----------
