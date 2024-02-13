@@ -45,7 +45,7 @@ Firstly, we conducted interviews with instructors who work in Brazil and a syste
 Then, we analyzed logs from online courses offered in Brazil and compared our findings with results presented in the literature. We explored and analyzed these logs using statistical methods and machine learning techniques.
 
 - [A. L. B. Damasceno, C. Almeida, W. Fernandes, H. Lopes and S. D. J. Barbosa, "What Can Be Found from Student
-Interaction Logs of Online Courses Offered in Brazil", *XXX Simpósio Brasileiro de Informática na Educação (SBIE 2019)*, Brasilia, Brazil, 2019, pp 1641–1650, doi: 10.5753/cbie.sbie.2019.1641](https://www.researchgate.net/publication/335840428_What_Can_Be_Found_from_Student_Interaction_Logs_of_Online_Courses_Offered_in_Brazil)
+Interaction Logs of Online Courses Offered in Brazil", *XXX Simpósio Brasileiro de Informática na Educação (SBIE 2019)*, Brasilia, Brazil, 2019, pp 1641–1650, doi: 10.5753/cbie.sbie.2019.1641](http://milanesa.ime.usp.br/rbie/index.php/sbie/article/view/8897)
 
 Furthermore, we have not found in the literature works about instructors’ visualization preferences of student logs. Therefore, we conducted a study to identify how much the instructors take into account topics related to both students’ behavior and performance, as well as their visualization preferences.
 
