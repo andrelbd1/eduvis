@@ -6,11 +6,17 @@ sys.path.append(visualizations_dir) # In case of error, put manually the path fo
 
 from src import app
 from src.config import settings
+from visualizations import PreprocessedView
 
 if __name__ == "__main__":
     debug=False
     if settings.ENV == "local":
         debug=True
-    
+
+    if settings.GENERATE_VIEWS:
+        students = ["Arthur","Enzo" ,"Gabriel","Miguel","Carlos","Heitor","Pedro","Henrique","Jorge","Francisco","Caio","Lucas","Rafael","Samuel","Diego","Alana","Luana","Dandara","Laura","Marcela","Maria","Eduarda","Clara","Alice","Ana","Sandra","Amanda","Camila","Valentina","Joana"]
+        instance = PreprocessedView()
+        instance.generate_all_views(students)
+
     # app.run(debug=True,port=8558)
     app.run(host='0.0.0.0',port=8558,debug=debug)

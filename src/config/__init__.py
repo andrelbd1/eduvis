@@ -1,14 +1,16 @@
 import os
 from dotenv import load_dotenv
+from distutils.util import strtobool
 
 class Settings:
-    
+
     load_dotenv(override=True)
     
     # Setting Environment
-    ENV = os.environ["ENV"]
+    ENV = os.environ['ENV']
 
     # Default values
+    GENERATE_VIEWS = strtobool(os.environ['GENERATE_VIEWS'])
     DEFAULT_USER_ID = 1
     DEFAULT_STATIC_DASHBOARD_ID = 1
     DEFAULT_CUSTOMIZABLE_DASHBOARD_ID = 2
