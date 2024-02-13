@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-import V001, V002, V003, V004, V005, V006, V007, V008, V009, V010, V011
+from visualizations import *
 
 class PreprocessedView:
     _student_names = []
@@ -148,9 +148,10 @@ class PreprocessedView:
         
         print('V011 done!')
 
-    def generate_all_views(self,n_students,names=[]):
+    def generate_all_views(self,names: list = []) -> None:
         print('Selecting names...')
-        self.random_data(n_students,names)
+        n_students = len(names)
+        self.random_data(n_students, names)
         print('Generating views...')
         self.generate_view_001(n_students)
         self.generate_view_002(n_students)
@@ -163,9 +164,3 @@ class PreprocessedView:
         self.generate_view_009(n_students)
         self.generate_view_010(n_students)
         self.generate_view_011(n_students)
-
-
-
-names = ["Arthur","Enzo" ,"Gabriel","Miguel","Carlos","Heitor","Pedro","Henrique","Jorge","Francisco","Caio","Lucas","Rafael","Samuel","Diego","Alana","Luana","Dandara","Laura","Marcela","Maria","Eduarda","Clara","Alice","Ana","Sandra","Amanda","Camila","Valentina","Joana"]
-instance = PreprocessedView()
-instance.generate_all_views(len(names),names)
