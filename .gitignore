@@ -154,3 +154,6 @@ poetry.lock
 
 # Database
 *.db
+
+# Database
+*.pkl
